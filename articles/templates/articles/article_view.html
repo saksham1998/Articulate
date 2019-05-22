@@ -1,0 +1,16 @@
+{% extends 'basic_layout.html' %}
+
+{% block content %}
+
+    <h1 style='text-decoration:underline;font-size:60px;margin-bottom:20px;'>Articles</h1>
+    <div class="articles">
+      {% for article in articles %}
+        <div class="article">
+          <h1><a href="{% url 'articles:detail' article_name=article.slug %}">{{article.title}}</a></h1>
+          <p>{{article.short}}</p>
+          <p>{{article.date}}</p>
+        </div>
+      {% endfor %}
+    </div>
+
+{% endblock %}
